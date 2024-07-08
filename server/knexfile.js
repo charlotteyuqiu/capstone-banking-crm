@@ -9,7 +9,6 @@ export default {
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: "banking_clients_database",
   },
   migrations: {
     directory: "./migrations",
