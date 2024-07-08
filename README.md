@@ -20,8 +20,8 @@ Who need to communicate with clients using pre-made email templates
 ### Features
 
 As a user, I want to be able to view the client database
-As a user, I want to be able to edit/add/delete client data
-As a user, I want to be able to edit/add/delete client portfolio data
+As a user, I want to be able to edit/add client data
+As a user, I want to be able to edit/add client portfolio data
 As a user, I want to be able to view alerts for portfolio due dates
 As a user, I want to be able to communicate with clients using pre-made email templates
 
@@ -50,179 +50,144 @@ As a user, I want to be able to communicate with clients using pre-made email te
 
 ### Sitemap
 
-- Home page
-- List cafés
-- View + Rate a café
-- Register
-- Login
+- Home/Client page
+- List Clients
+- View + edit/add a client
+- View +edit/add a portfolio
+- View portfolios that's coming due within 1 month
 
 ### Mockups
 
 #### Home Page
 
-![](home.png)
+![](Home-Client-Page.png)
 
-#### Register Page
+#### Portfolio Page
 
-![](register.png)
+![](Portfolio-Page.png)
 
-#### Login Page
+#### Edit Client Page
 
-![](login.png)
+![](Edit-Client-Page.png.png)
 
-#### Enter Location Page
+#### Edit portfolio Page
 
-![](enter-location.png)
+![](Edit-Portfolio-Page.png.png)
 
-#### View Cafés Page
+#### Add Client/Portfolio Page
 
-![](view-cafes.png)
+![](Add-Client-Page.png.png)
+![](Add-Portfolio-Page.png.png)
 
-#### View Café Page
+#### Alert-Modal
 
-![](view-cafe.png)
+![](Alert-Modal.png)
 
-#### View Café Page (Rated state)
+#### Email-page-example
 
-![](view-cafe-rated.png)
+![](Email-Page.png)
 
 ### Data
 
-![](sql-diagram.png)
+![](Database-Structure.png)
 
 ### Endpoints
 
-**GET /cafes**
+**GET /clients**
 
-- Get cafés, with an optional "visited" if the user is logged in or not
+- Get all clients
+  Parameters:
 
-Parameters:
-
-- longitude: User-provided location as a number
-- latitude: User-provided location as a number
-- token (optional): JWT used to add "visited" boolean
+- id: client id as number
 
 Response:
 
 ```
 [
-    {
-        "id": 1,
-        "name": "Quantum Coffee",
-        "distance": 0.25,
-        "averageRating": 4.5,
-        "visited": true
-    },
+{
+    "client_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@gmail.com",
+    "phone": "437-660-6701"
+}
     ...
 ]
 ```
 
-**GET /cafes/:id**
+**GET /portfolios**
 
-- Get café by id, with an optional "userRating" if the user is logged in or not
+- Get all portfolios
 
 Parameters:
 
-- id: Café id as number
-- token (optional): JWT used to add user rating
+- id: portfolo id as number
 
 Response:
 
 ```
 {
-    "id": 1,
-    "name": "Quantum Coffee",
-    "distance": 0.25,
-    "averageRating": 4.5,
-    "userRating": 5
+    "category": "GIC",
+    "amount": 50000.00,
+    "due_date": "2024-12-01",
+    "client_id": 1
 }
 ```
 
-**POST /cafes/:id/rating**
-
-- Logged in user can add their rating of a café
-
-Parameters:
-
-- id: Café id
-- token: JWT of the logged in user
-- rating: Number Rating out of 5 in 0.5 increments
+**POST /client/:id**
 
 Response:
 
 ```
 {
-    "id": 1,
-    "name": "Quantum Coffee",
-    "distance": 0.25,
-    "averageRating": 4.5,
-    "userRating": 5
+    "client_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@gmail.com",
+    "phone": "437-660-6701"
 }
 ```
 
-**PUT /cafes/:id/rating**
-
-- Logged in user can update their rating of a café
-
-Parameters:
-
-- id: Café id
-- token: JWT of the logged in user
-- rating: Number Rating out of 5 in 0.5 increments
+**POST /portfolio/:id**
 
 Response:
 
 ```
 {
-    "id": 1,
-    "name": "Quantum Coffee",
-    "distance": 0.25,
-    "averageRating": 4.5,
-    "userRating": 5
+    "category": "GIC",
+    "amount": 50000.00,
+    "due_date": "2024-12-01",
+    "client_id": 1
 }
 ```
 
-**POST /users/register**
+**PUT /client/:id**
 
-- Add a user account
-
-Parameters:
-
-- email: User's email
-- password: User's provided password
+- user can update or edit client details
 
 Response:
 
 ```
 {
-    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+    "client_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@gmail.com",
+    "phone": "437-660-6701"
 }
 ```
 
-**POST /users/login**
+**PUT /portfolio/:id**
 
-- Login a user
-
-Parameters:
-
-- email: User's email
-- password: User's provided password
+- user can update or edit portfolio details
 
 Response:
 
 ```
 {
-    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+    "category": "GIC",
+    "amount": 50000.00,
+    "due_date": "2024-12-01",
+    "client_id": 1
 }
 ```
-
-### Auth
-
-- JWT auth
-  - Before adding auth, all API requests will be using a fake user with id 1
-  - Added after core features have first been implemented
-  - Store JWT in localStorage, remove when a user logs out
-  - Add states for logged in showing different UI in places listed in mockups
 
 ## Roadmap
 
@@ -236,45 +201,34 @@ Response:
 
 - Create migrations
 
-- Gather 15 sample café geolocations in two different cities
+- Gather 20 sample client deatils
 
-- Create seeds with sample café data
+- Create seeds with sample client data
 
 - Deploy client and server projects so all commits will be reflected in production
 
-- Feature: List cafés from a given location
+- Feature: Client/portfolio List
 
-  - Implement list cafés page including location form
-  - Store given location in sessionStorage
-  - Create GET /cafes endpoint
+  - Implement client/portfolio list/home page
+  - Create GET /clients endpoint
 
-- Feature: View café
+- Feature: Edit clients/portfolios
 
-  - Implement view café page
-  - Create GET /cafes/:id
+  - Implement edit clients/portfolio page
+  - Create PUT /clients or portfolios/:id
 
-- Feature: Rate café
+- Feature: add client/portfolio
 
-  - Add form input to view café page
-  - Create POST /ratings
-  - States for add & update ratings
+  - Add form input to add client page
+  - Create POST endpoint
 
-- Feature: Home page
+- Feature: Alert modal
 
-- Feature: Create account
+  - Implement alert mesaage pop-up window
 
-  - Implement register page + form
-  - Create POST /users/register endpoint
+- Feature: Email Template Send
 
-- Feature: Login
-
-  - Implement login page + form
-  - Create POST /users/login endpoint
-
-- Feature: Implement JWT tokens
-
-  - Server: Update expected requests / responses on protected endpoints
-  - Client: Store JWT in local storage, include JWT on axios calls
+  - Implement email template page
 
 - Bug fixes
 
@@ -282,15 +236,4 @@ Response:
 
 ## Nice-to-haves
 
-- Integrate Google Places / Maps
-  - View more details about a café
-  - Visual radius functionality
-- Forgot password functionality
-- Ability to add a café
-- Elite status badging for users and cafés: Gamify user ratings
-- Expand rating system
-  - Coffee
-  - Ambiance
-  - Staff
-- Expanded user information: full name, favorite café
-- Unit and Integration Tests
+-Delete-Modal page
