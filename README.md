@@ -109,7 +109,7 @@ Response:
     "name": "Alice Johnson",
     "email": "alice.johnson@gmail.com",
     "phone": "437-660-6701"
-}
+  }
     ...
 ]
 ```
@@ -125,12 +125,14 @@ Parameters:
 Response:
 
 ```
-{
+ {
+    "portfolio_id": 1,
     "category": "GIC",
-    "amount": 50000.00,
-    "due_date": "2024-12-01",
-    "client_id": 1
-}
+    "amount": "50000.00",
+    "due_date": "2024-12-01T05:00:00.000Z",
+    "client_id": 1,
+    "description": "This client is conservative and cannot tolerate volatile changes in portfolio; recommend this 3 years fixed rate GIC, annual interest rate 4%, compound by year."
+  }
 ```
 
 **POST /client/:id**
@@ -152,10 +154,12 @@ Response:
 
 ```
 {
-    "category": "GIC",
-    "amount": 50000.00,
-    "due_date": "2024-12-01",
-    "client_id": 1
+  "portfolio_id": 27,
+  "category": "mortgage",
+  "amount": "350000.50",
+  "due_date": "2024-10-05T04:00:00.000Z",
+  "client_id": 3,
+  "description": "This mortgage is in 5 years variable rate 3.75%, payment frequency by month."
 }
 ```
 
@@ -182,10 +186,12 @@ Response:
 
 ```
 {
-    "category": "GIC",
-    "amount": 50000.00,
-    "due_date": "2024-12-01",
-    "client_id": 1
+  "portfolio_id": 5,
+  "category": "mortgage",
+  "amount": "350000.50",
+  "due_date": "2024-10-05T04:00:00.000Z",
+  "client_id": 3,
+  "description": "This mortgage is in 5 years variable rate 3.75%, payment frequency by month."
 }
 ```
 
