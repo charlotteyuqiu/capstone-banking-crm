@@ -8,7 +8,20 @@
   border: 0.0625rem solid $secondaryLight;
   border-radius: 0.5rem;
   margin: 1.25rem auto;
-  max-width: 50rem;
+
+  &__upper-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
 
   &__title {
     text-align: center;
@@ -19,24 +32,12 @@
     display: block;
     margin: 0 auto 1.25rem auto;
     padding: 0.625rem 1.25rem;
-    background-color: $button-balck;
+    background-color: $primaryBlue;
     color: $white;
     border: none;
     border-radius: 1.25rem;
     font-size: 1rem;
     cursor: pointer;
-  }
-  &__edit-icon {
-    cursor: pointer;
-    color: $primaryBlue;
-    margin-left: 0.625rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  &__name-edit {
-    display: flex;
-    flex-direction: column;
   }
 
   &__items {
@@ -45,33 +46,88 @@
   }
 
   &__item {
-    padding: 1.25rem 12rem;
+    padding: 1.25rem;
     border: 0.0625rem solid $secondaryLight;
     border-radius: 0.5rem;
     margin-bottom: 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      gap: 1rem;
+      padding: 2rem;
+    }
+  }
+  &__name-edit {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 0.625rem;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
+      margin-bottom: 0;
+      gap: 0.5rem;
     }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
 
-    &__portfolio-btn {
-      display: block;
-      margin: 1.25rem auto 0 auto;
-      padding: 0.625rem 1.25rem;
-      background-color: $primaryBlue;
-      color: $white;
-      border: none;
-      border-radius: 1.25rem;
-      font-size: 1rem;
-      cursor: pointer;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
 
-      @include tablet {
-        margin: 0 0 0 auto;
-      }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      padding: 2rem;
+    }
+    @include desktop {
+      padding: 4rem;
+    }
+  }
+
+  &__edit-icon {
+    cursor: pointer;
+    color: $primaryBlue;
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__portfolio-btn {
+    display: block;
+    background-color: $primaryBlue;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    @include tablet {
+      margin: 0 auto;
+      align-self: center;
     }
   }
 }
