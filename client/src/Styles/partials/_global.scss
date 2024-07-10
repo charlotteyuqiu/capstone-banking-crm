@@ -1,10 +1,156 @@
-@use 'fonts';
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./fonts" as *;
+// Global
+* {
+  box-sizing: border-box;
+}
 
-*,
-*::after,
-*::before {
-  font-family: "TitilliumWeb";
+body,
+html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: $white;
+  color: $primaryDark;
+  width: 100%;
+}
+
+.formfield {
+  border-radius: 20px;
+  height: 2.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid $secondraryDark;
+
+  @include tablet {
+    height: 2.375rem;
+  }
+
+  &:focus {
+    outline: transparent;
+    border: 1px solid $backgroundDark;
+  }
+
+  &__textarea {
+    border-radius: 20px;
+    padding: 1rem 1rem 0 1rem;
+    border: 1px solid $secondraryDark;
+    height: 7rem;
+  }
+
+  &::placeholder {
+    color: $secondraryDark; // Use $secondraryDark if $slate is not defined
+  }
+}
+
+.button {
+  color: $backgroundLight;
+  line-height: 20px;
+  height: 2.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 20px;
+  border: transparent;
+
+  &:hover {
+    background-color: $secondaryLight;
+  }
+
+  @include tablet {
+    height: 2.5rem;
+  }
+}
+
+.edit-button {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: $backgroundDark;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover {
+    background-color: $secondaryLight;
+  }
+
+  @include tablet {
+    display: inline;
+    height: 2.375rem;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+    border-radius: 20px;
+    background-color: $backgroundDark;
+    color: $backgroundLight;
+    line-height: 20px;
+    border: transparent;
+    background-image: url("../../assets/images/icons/edit-24px.svg");
+    background-repeat: no-repeat;
+    background-position: 26% 50%;
+
+    &:hover {
+      background-color: $secondaryLight;
+    }
+  }
+}
+
+.cancel-button {
+  line-height: 20px;
+  height: 2.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 20px;
+  background-color: $backgroundLight;
+  color: $secondraryDark;
+  border: 1px solid $secondraryDark;
+  width: 100%;
+
+  &:hover {
+    background-color: $backgroundLight;
+    color: $backgroundDark;
+    border-color: $backgroundDark;
+  }
+
+  @include tablet {
+    height: 2.5rem;
+  }
+}
+
+.link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.delete-button {
+  line-height: 20px;
+  height: 2.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 20px;
+  border: transparent;
+  background-color: $red;
+  color: $backgroundLight;
+  border: 1px solid $red;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding: 0.5rem 3.1875rem;
+  width: 10rem;
+
+  &:hover {
+    background-color: $backgroundLight;
+    color: $backgroundDark;
+    border-color: $backgroundDark;
+  }
+
+  @include tablet {
+    width: 5rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

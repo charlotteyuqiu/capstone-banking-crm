@@ -1,0 +1,77 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.client-list {
+  padding: 1.25rem;
+  background-color: $white;
+  border: 0.0625rem solid $secondaryLight;
+  border-radius: 0.5rem;
+  margin: 1.25rem auto;
+  max-width: 50rem;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  &__add-btn {
+    display: block;
+    margin: 0 auto 1.25rem auto;
+    padding: 0.625rem 1.25rem;
+    background-color: $button-balck;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  &__edit-icon {
+    cursor: pointer;
+    color: $primaryBlue;
+    margin-left: 0.625rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__name-edit {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 1.25rem 12rem;
+    border: 0.0625rem solid $secondaryLight;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__portfolio-btn {
+      display: block;
+      margin: 1.25rem auto 0 auto;
+      padding: 0.625rem 1.25rem;
+      background-color: $primaryBlue;
+      color: $white;
+      border: none;
+      border-radius: 1.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+
+      @include tablet {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}
