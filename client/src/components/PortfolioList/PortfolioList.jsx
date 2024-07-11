@@ -112,7 +112,9 @@ const PortfolioList = () => {
                 {getStatus(portfolio.due_date)}
               </div>
               <div className="portfolio-list__action">
-                <strong>ACTION</strong>
+                <p className="portfolio-list__text">
+                  <strong>ACTION</strong>
+                </p>
                 <select
                   value={portfolio.action || "No actions yet"}
                   onChange={(e) =>

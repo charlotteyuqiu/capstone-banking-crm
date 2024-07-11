@@ -204,17 +204,16 @@
     }
 
     strong {
-      font-size: 1.25rem; // Make the label font bigger
       color: $primaryDark;
     }
 
     select {
       margin-top: 0.5rem;
-      padding: 0.5rem; // Add padding for better appearance
-      font-size: 1rem; // Increase font size
-      background-color: $backgroundLight; // Change background color
-      border: 1px solid $activeBlue; // Border color to match the theme
-      border-radius: 0.5rem; // Slightly rounded corners
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      background-color: $backgroundLight;
+      border: 1px solid $activeBlue;
+      border-radius: 0.5rem;
       color: $primaryDark;
 
       @include tablet {
