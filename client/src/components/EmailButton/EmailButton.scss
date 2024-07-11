@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+.email {
+  &__button {
+    display: block;
+    padding: 0.625rem 1.25rem;
+    background-color: $primaryBlue;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1.25rem;
+
+    @include tablet {
+      margin-top: 0;
+      align-self: flex-start;
+    }
+  }
+}

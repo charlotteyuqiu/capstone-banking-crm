@@ -99,28 +99,6 @@ html {
   }
 }
 
-.cancel-button {
-  line-height: 20px;
-  height: 2.375rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 20px;
-  background-color: $backgroundLight;
-  color: $secondraryDark;
-  border: 1px solid $secondraryDark;
-  width: 100%;
-
-  &:hover {
-    background-color: $backgroundLight;
-    color: $backgroundDark;
-    border-color: $backgroundDark;
-  }
-
-  @include tablet {
-    height: 2.5rem;
-  }
-}
-
 .link {
   display: inline-flex;
   text-decoration: none;

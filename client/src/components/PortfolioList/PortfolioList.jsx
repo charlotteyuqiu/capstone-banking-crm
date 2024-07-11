@@ -5,6 +5,7 @@ import "./PortfolioList.scss";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import AlertIcon from "../../assets/icons/alert-icon.png";
 import OkIcon from "../../assets/icons/green-icon.jpeg";
+import EmailButton from "../EmailButton/EmailButton";
 
 const PortfolioList = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -147,7 +148,11 @@ const PortfolioList = () => {
               </p>
             </div>
             <div className="portfolio-list__action-btn">
-              <button className="portfolio-list__email-btn">Send Email</button>
+              <EmailButton
+                clientName={clientIdToNameMap[portfolio.client_id]}
+                portfolioCategory={portfolio.category}
+                dueDate={portfolio.due_date}
+              />
             </div>
           </li>
         ))}
