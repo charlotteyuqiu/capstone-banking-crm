@@ -3,6 +3,7 @@ import Axios from "axios";
 import PropTypes from "prop-types";
 import "./ClientList.scss";
 import EditIcon from "../../assets/icons/edit-24px.svg";
+import { Link } from "react-router-dom";
 
 const ClientList = () => {
   const [clients, setClients] = useState([]);
@@ -65,9 +66,11 @@ const ClientList = () => {
                 <strong>ADDRESS</strong> {client.address}
               </p>
               <div className="client-list__action-btn">
-                <button className="client-list__portfolio-btn">
-                  View Portfolio
-                </button>
+                <Link to={`/clients/${client.client_id}/portfolios`}>
+                  <button className="client-list__portfolio-btn">
+                    View Portfolio
+                  </button>
+                </Link>
               </div>
             </div>
           </li>
