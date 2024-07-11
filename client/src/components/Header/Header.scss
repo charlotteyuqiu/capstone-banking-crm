@@ -56,12 +56,12 @@
 
     &--link {
       text-decoration: none;
-      color: $activeBlue;
+      color: $primaryBlue;
       font-weight: normal;
 
       &.active {
         font-weight: bold;
-        color: $primaryBlue;
+        color: $activeBlue;
       }
 
       @include desktop {
