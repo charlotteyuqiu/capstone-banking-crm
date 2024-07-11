@@ -61,11 +61,14 @@ const ClientList = () => {
                   <strong>PHONE</strong> {client.phone}
                 </p>
               </div>
-            </div>
-            <div className="client-list__action-btn">
-              <button className="client-list__portfolio-btn">
-                View Portfolio
-              </button>
+              <p className="client-list__address">
+                <strong>ADDRESS</strong> {client.address}
+              </p>
+              <div className="client-list__action-btn">
+                <button className="client-list__portfolio-btn">
+                  View Portfolio
+                </button>
+              </div>
             </div>
           </li>
         ))}

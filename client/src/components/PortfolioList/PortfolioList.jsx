@@ -3,6 +3,8 @@ import Axios from "axios";
 import PropTypes from "prop-types";
 import "./PortfolioList.scss";
 import EditIcon from "../../assets/icons/edit-24px.svg";
+import AlertIcon from "../../assets/icons/alert-icon.png";
+import OkIcon from "../../assets/icons/green-icon.jpeg";
 
 const PortfolioList = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -31,6 +33,48 @@ const PortfolioList = () => {
 
     fetchPortfoliosAndClients();
   }, []);
+
+  const getStatus = (dueDate) => {
+    const today = new Date();
+    const due = new Date(dueDate);
+    const timeDiff = due - today;
+    const daysDiff = timeDiff / (1000 * 3600 * 24);
+
+    if (daysDiff <= 60) {
+      return (
+        <div className="portfolio-list__status">
+          <img
+            src={AlertIcon}
+            alt="Alert Icon"
+            className="portfolio-list__status-icon"
+          />
+          <span>COMING DUE</span>
+        </div>
+      );
+    } else {
+      return (
+        <div className="portfolio-list__status">
+          <img
+            src={OkIcon}
+            alt="OK Icon"
+            className="portfolio-list__status-icon"
+          />
+          <span>OK</span>
+        </div>
+      );
+    }
+  };
+
+  const handleActionChange = (portfolioId, event) => {
+    const newAction = event.target.value;
+    setPortfolios((prevPortfolios) =>
+      prevPortfolios.map((portfolio) =>
+        portfolio.portfolio_id === portfolioId
+          ? { ...portfolio, action: newAction }
+          : portfolio
+      )
+    );
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -65,6 +109,23 @@ const PortfolioList = () => {
                   src={EditIcon}
                   alt="edit-icon"
                 />
+                {getStatus(portfolio.due_date)}
+              </div>
+              <div className="portfolio-list__action">
+                <strong>ACTION</strong>
+                <select
+                  value={portfolio.action || "No actions yet"}
+                  onChange={(e) =>
+                    handleActionChange(portfolio.portfolio_id, e)
+                  }
+                >
+                  <option value="No actions yet">No actions yet</option>
+                  <option value="Email sent">Email sent</option>
+                  <option value="Appointment booked">Appointment booked</option>
+                  <option value="Not able to contact client">
+                    Not able to contact client
+                  </option>
+                </select>
               </div>
               <div className="portfolio-list__info">
                 <p className="portfolio-list__text">
@@ -78,6 +139,7 @@ const PortfolioList = () => {
                   {new Date(portfolio.due_date).toLocaleDateString()}
                 </p>
               </div>
+
               <p className="portfolio-list__description">
                 <strong>DESCRIPTION</strong> {portfolio.description}
               </p>

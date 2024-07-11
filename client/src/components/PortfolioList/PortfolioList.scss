@@ -123,6 +123,28 @@
     }
   }
 
+  &__status-container {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  &__status-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   &__description {
     display: block;
     width: 100%;
@@ -143,18 +165,16 @@
 
   &__action-btn {
     display: flex;
-    justify-content: center;
     width: 100%;
 
     @include tablet {
-      justify-content: center;
+      justify-content: flex-start;
       width: auto;
     }
   }
 
   &__email-btn {
     display: block;
-    margin: 1.25rem auto 0 auto;
     padding: 0.625rem 1.25rem;
     background-color: $primaryBlue;
     color: $white;
@@ -162,10 +182,50 @@
     border-radius: 1.25rem;
     font-size: 1rem;
     cursor: pointer;
+    margin-top: 1.25rem;
 
     @include tablet {
-      margin: 0 auto;
-      align-self: center;
+      margin-top: 0;
+      align-self: flex-start;
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0;
+    }
+
+    strong {
+      font-size: 1.25rem; // Make the label font bigger
+      color: $primaryDark;
+    }
+
+    select {
+      margin-top: 0.5rem;
+      padding: 0.5rem; // Add padding for better appearance
+      font-size: 1rem; // Increase font size
+      background-color: $backgroundLight; // Change background color
+      border: 1px solid $activeBlue; // Border color to match the theme
+      border-radius: 0.5rem; // Slightly rounded corners
+      color: $primaryDark;
+
+      @include tablet {
+        margin-top: 0;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $activeBlue;
+        box-shadow: 0 0 5px $activeBlue;
+      }
     }
   }
 }
