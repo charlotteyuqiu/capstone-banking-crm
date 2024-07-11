@@ -9,7 +9,7 @@ export async function seed(knex) {
       portfolio_id: 1,
       category: "GIC",
       amount: 50000.0,
-      due_date: "2024-12-01",
+      due_date: "2024-08-15",
       client_id: 1,
       description:
         "This client is conservative and cannot tolerate volatile changes in portfolio; recommend this 3 years fixed rate GIC, annual interest rate 4%, compound by year.",
@@ -45,7 +45,7 @@ export async function seed(knex) {
       portfolio_id: 5,
       category: "mortgage",
       amount: 350000.3,
-      due_date: "2024-10-05",
+      due_date: "2024-08-25",
       client_id: 3,
       description:
         "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
@@ -54,7 +54,7 @@ export async function seed(knex) {
       portfolio_id: 6,
       category: "GIC",
       amount: 70000.0,
-      due_date: "2024-09-25",
+      due_date: "2024-09-06",
       client_id: 3,
       description:
         "This client is conservative and cannot tolerate volatile changes in portfolio; recommend this 3 years fixed rate GIC, annual interest rate 4%, compound by year.",
@@ -171,7 +171,7 @@ export async function seed(knex) {
       portfolio_id: 19,
       category: "GIC",
       amount: 600000.5,
-      due_date: "2024-12-25",
+      due_date: "2024-09-02",
       client_id: 11,
       description:
         "This client is conservative and cannot tolerate volatile changes in portfolio; recommend this 3 years fixed rate GIC, annual interest rate 4%, compound by year.",
