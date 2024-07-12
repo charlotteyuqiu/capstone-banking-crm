@@ -54,13 +54,10 @@ function EmailModal({
       <p>[Charlotte He]</p>
       <p>[123-456-7890 | ABC Bank]</p>
       <div className="email-modal__buttons">
-        <button className="email-modal__buttons-send-email" onClick={onSend}>
+        <button className="button" onClick={onSend}>
           Send Email
         </button>
-        <button
-          className="email-modal__buttons-cancel"
-          onClick={onRequestClose}
-        >
+        <button className="cancel-button" onClick={onRequestClose}>
           Cancel
         </button>
       </div>

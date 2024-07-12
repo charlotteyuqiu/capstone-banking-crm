@@ -44,20 +44,22 @@ html {
 }
 
 .button {
-  color: $backgroundLight;
-  line-height: 20px;
-  height: 2.375rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 20px;
-  border: transparent;
+  display: block;
+  margin: 0 auto 1.25rem auto;
+  padding: 0.625rem 1.25rem;
+  background-color: $primaryBlue;
+  color: $white;
+  border: none;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
 
   &:hover {
-    background-color: $secondaryLight;
+    background-color: darken($primaryBlue, 10%);
   }
 
   @include tablet {
-    height: 2.5rem;
+    margin: 0;
   }
 }
 
@@ -130,5 +132,27 @@ html {
     height: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+.cancel-button {
+  display: block;
+  margin: 0 auto 1.25rem auto;
+  padding: 0.625rem 1.25rem;
+  color: $white;
+  border: none;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: $backgroundLight;
+  color: $primaryDark;
+  border: 1px solid $primaryDark;
+
+  &:hover {
+    background-color: darken($primaryBlue, 10%);
+  }
+
+  @include tablet {
+    margin: 0;
   }
 }

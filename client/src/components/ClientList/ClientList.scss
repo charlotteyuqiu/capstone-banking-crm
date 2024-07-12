@@ -33,22 +33,6 @@
     }
   }
 
-  &__add-btn {
-    display: block;
-    margin: 0 auto 1.25rem auto;
-    padding: 0.625rem 1.25rem;
-    background-color: $primaryBlue;
-    color: $white;
-    border: none;
-    border-radius: 1.25rem;
-    font-size: 1rem;
-    cursor: pointer;
-
-    @include tablet {
-      margin: 0;
-    }
-  }
-
   &__items {
     list-style: none;
     padding: 0;

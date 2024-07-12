@@ -8,10 +8,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ClientList from "./components/ClientList/ClientList";
 import ClientPortfolio from "./components/ClientPortfolio/ClientPortfolio";
-// import ClientDetails from "./components/ClientDetails/ClientDetails";
 // import EditClients from "./components/EditClients/EditClients";
-// import AddClients from "./components/AddClients/AddClients";
-// import PortfolioDetails from "./components/PortfolioDetails/PortfolioDetails";
+import AddClient from "./components/AddClient/AddClient";
 // import DeleteClient from "./components/deleteClient/DeleteClient";
 // import EditPortfolio from "./components/EditPortfolio/EditPortfolio";
 // import AddPortfolio from "./components/AddPortfolio/AddPortfolio";
@@ -24,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ClientList />} />
         <Route path="/clients" element={<ClientList />} />
+        <Route path="/clients/add" element={<AddClient />} />
         <Route
           path="/clients/:client_id/portfolios"
           element={<ClientPortfolio />}

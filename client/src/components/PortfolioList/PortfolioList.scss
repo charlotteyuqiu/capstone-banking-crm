@@ -8,7 +8,6 @@
   border: 0.0625rem solid $secondaryLight;
   border-radius: 0.5rem;
   margin: 1.25rem auto;
-  //   max-width: 50rem;
 
   &__upper-part {
     display: flex;
@@ -30,22 +29,6 @@
 
     @include tablet {
       margin-bottom: 0;
-    }
-  }
-
-  &__add-btn {
-    display: block;
-    margin: 0 auto 1.25rem auto;
-    padding: 0.625rem 1.25rem;
-    background-color: $primaryBlue;
-    color: $white;
-    border: none;
-    border-radius: 1.25rem;
-    font-size: 1rem;
-    cursor: pointer;
-
-    @include tablet {
-      margin: 0;
     }
   }
 

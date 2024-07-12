@@ -38,7 +38,9 @@ const ClientList = () => {
     <div className="client-list">
       <div className="client-list__upper-part">
         <h2 className="client-list__title">View Client Details</h2>
-        <button className="client-list__add-btn">+ Add New Client</button>
+        <Link to="/clients/add">
+          <button className="button link">+ Add New Client</button>
+        </Link>
       </div>
       <ul className="client-list__items">
         {clients.map((client) => (
@@ -67,7 +69,7 @@ const ClientList = () => {
               </p>
               <div className="client-list__action-btn">
                 <Link to={`/clients/${client.client_id}/portfolios`}>
-                  <button className="client-list__portfolio-btn">
+                  <button className="client-list__portfolio-btn link">
                     View Portfolio
                   </button>
                 </Link>

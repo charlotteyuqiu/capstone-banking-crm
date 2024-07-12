@@ -95,8 +95,9 @@ const PortfolioList = () => {
     <div className="portfolio-list">
       <div className="portfolio-list__upper-part">
         <h2 className="portfolio-list__title">View Portfolio Details</h2>
-        <button className="portfolio-list__add-btn">+ Add New Portfolio</button>
+        <button className="button">+ Add New Portfolio</button>
       </div>
+
       <ul className="portfolio-list__items">
         {portfolios.map((portfolio) => (
           <li key={portfolio.portfolio_id} className="portfolio-list__item">
