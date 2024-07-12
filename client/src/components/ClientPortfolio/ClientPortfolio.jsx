@@ -89,14 +89,6 @@ const ClientPortfolio = () => {
         {portfolios.map((portfolio) => (
           <li key={portfolio.portfolio_id} className="client-portfolio__item">
             <div className="client-portfolio__card">
-              <div className="client-portfolio__name-edit">
-                <img
-                  className="client-portfolio__edit-icon"
-                  src={EditIcon}
-                  alt="edit-icon"
-                />
-                {getStatus(portfolio.due_date)}
-              </div>
               <div className="client-portfolio__info">
                 <p className="client-portfolio__text">
                   <strong>CATEGORY</strong> {portfolio.category}
@@ -108,6 +100,14 @@ const ClientPortfolio = () => {
                   <strong>DUE DATE</strong>{" "}
                   {new Date(portfolio.due_date).toLocaleDateString()}
                 </p>
+                <div className="client-portfolio__name-edit">
+                  <img
+                    className="client-portfolio__edit-icon"
+                    src={EditIcon}
+                    alt="edit-icon"
+                  />
+                  {getStatus(portfolio.due_date)}
+                </div>
               </div>
               <p className="client-portfolio__description">
                 <strong>DESCRIPTION</strong> {portfolio.description}

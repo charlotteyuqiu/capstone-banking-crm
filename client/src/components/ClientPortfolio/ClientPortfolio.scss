@@ -1,0 +1,212 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.client-portfolio {
+  padding: 1.25rem;
+  background-color: $white;
+  border: 0.0625rem solid $secondaryLight;
+  border-radius: 0.5rem;
+  margin: 1.25rem auto;
+  //   max-width: 50rem;
+
+  &__upper-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.25rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 1.25rem;
+    border: 0.0625rem solid $secondaryLight;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+    }
+  }
+
+  &__name-edit {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      margin-bottom: 0;
+      gap: 0.5rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.625rem;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__status-container {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  &__status-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__description {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__edit-icon {
+    cursor: pointer;
+    color: $primaryBlue;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  &__action-btn {
+    display: flex;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-start;
+      width: auto;
+    }
+  }
+
+  &__email-btn {
+    display: block;
+    padding: 0.625rem 1.25rem;
+    background-color: $primaryBlue;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1.25rem;
+
+    @include tablet {
+      margin-top: 0;
+      align-self: flex-start;
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0;
+    }
+
+    strong {
+      color: $primaryDark;
+    }
+
+    select {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      background-color: $backgroundLight;
+      border: 1px solid $activeBlue;
+      border-radius: 0.5rem;
+      color: $primaryDark;
+
+      @include tablet {
+        margin-top: 0;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $activeBlue;
+        box-shadow: 0 0 5px $activeBlue;
+      }
+    }
+  }
+}

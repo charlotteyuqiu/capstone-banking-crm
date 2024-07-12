@@ -6,7 +6,7 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import { Link } from "react-router-dom";
 
 const ClientList = () => {
-  const [clients, setClients] = useState([]);
+  const [clients, setClients] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
