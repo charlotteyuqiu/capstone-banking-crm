@@ -102,4 +102,24 @@ router.put("/:portfolio_id", async (req, res) => {
   }
 });
 
+// Route to delete a portfolio
+router.delete("/:portfolio_id", async (req, res) => {
+  const { portfolio_id } = req.params;
+  try {
+    const deletedRows = await knex("portfolio").where({ portfolio_id }).del();
+
+    if (deletedRows === 0) {
+      return res.status(404).json({ message: "Portfolio not found" });
+    }
+
+    return res.status(200).json({ message: "Portfolio deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting portfolio:", error.message); // Log the error message
+    console.error(error.stack); // Log the complete error stack
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
+  }
+});
+
 export default router;
