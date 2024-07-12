@@ -42,7 +42,7 @@ export default function EditClient() {
 
   // Canadian address regex pattern
   const canadianAddressRegex =
-    /^\d+\s[A-Za-z\s]+,\s[A-Za-z\s]+,\s[A-Za-z]{2},\s[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d$/;
+    /^\d+\s[A-Za-z\s]+,?\s[A-Za-z\s]+,?\s[A-Za-z]{2},?\s[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d\s[A-Za-z]+$/;
 
   // 2. Input change handler
   const changeHandler = (event) => {

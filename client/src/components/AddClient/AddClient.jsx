@@ -19,7 +19,7 @@ export default function AddClient() {
 
   // Canadian address regex pattern
   const canadianAddressRegex =
-    /^\d+\s[A-Za-z\s]+,\s[A-Za-z\s]+,\s[A-Za-z]{2},\s[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d$/;
+    /^\d+\s[A-Za-z\s]+,?\s[A-Za-z\s]+,?\s[A-Za-z]{2},?\s[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d\s[A-Za-z]+$/;
 
   // 2. Input change handler
   const changeHandler = (event) => {
@@ -73,7 +73,7 @@ export default function AddClient() {
       setErrors((prevErrors) => ({
         ...prevErrors,
         address:
-          "Please enter an address in the format: 123 Street Name, City, Province, A1A 1A1",
+          "Please enter an address in the format: 123 Street Name, City, Province, A1A 1A1 Country",
       }));
       setSubmitClicked(true);
       return;

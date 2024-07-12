@@ -109,11 +109,13 @@ const PortfolioList = () => {
                 <p className="portfolio-list__text">
                   <strong>{clientIdToNameMap[portfolio.client_id]}</strong>
                 </p>
-                <img
-                  className="portfolio-list__edit-icon"
-                  src={EditIcon}
-                  alt="edit-icon"
-                />
+                <Link to={`/portfolios/${portfolio.portfolio_id}/edit`}>
+                  <img
+                    className="portfolio-list__edit-icon"
+                    src={EditIcon}
+                    alt="edit-icon"
+                  />
+                </Link>
                 {getStatus(portfolio.due_date)}
               </div>
               <div className="portfolio-list__action">
