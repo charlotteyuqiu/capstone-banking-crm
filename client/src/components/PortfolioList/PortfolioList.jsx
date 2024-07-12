@@ -6,6 +6,7 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import AlertIcon from "../../assets/icons/alert-icon.png";
 import OkIcon from "../../assets/icons/green-icon.jpeg";
 import EmailButton from "../EmailButton/EmailButton";
+import { Link } from "react-router-dom";
 
 const PortfolioList = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -95,7 +96,9 @@ const PortfolioList = () => {
     <div className="portfolio-list">
       <div className="portfolio-list__upper-part">
         <h2 className="portfolio-list__title">View Portfolio Details</h2>
-        <button className="button">+ Add New Portfolio</button>
+        <Link to="/portfolios/add">
+          <button className="button link">+ Add New Portfolio</button>
+        </Link>
       </div>
 
       <ul className="portfolio-list__items">

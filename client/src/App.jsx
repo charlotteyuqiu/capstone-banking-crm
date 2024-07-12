@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Axios from "axios";
 
 // import components
@@ -12,7 +11,7 @@ import ClientPortfolio from "./components/ClientPortfolio/ClientPortfolio";
 import AddClient from "./components/AddClient/AddClient";
 // import DeleteClient from "./components/deleteClient/DeleteClient";
 // import EditPortfolio from "./components/EditPortfolio/EditPortfolio";
-// import AddPortfolio from "./components/AddPortfolio/AddPortfolio";
+import AddPortfolio from "./components/AddPortfolio/AddPotfolio";
 import PortfolioList from "./components/PortfolioList/PortfolioList";
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
           element={<ClientPortfolio />}
         />
         <Route path="/portfolios" element={<PortfolioList />} />
+        <Route path="/portfolios/add" element={<AddPortfolio />} />
       </Routes>
       <Footer />
     </BrowserRouter>
