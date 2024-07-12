@@ -10,6 +10,8 @@ const router = express.Router();
 // Email and phone validation regex patterns
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+const canadianAddressRegex =
+  /^\d+\s[A-Za-z\s]+,?\s[A-Za-z\s]+,?\s[A-Za-z]{2},?\s[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d\s[A-Za-z]+$/;
 
 // Function to get a client by ID
 const getClientById = async (client_id) => {
@@ -87,7 +89,6 @@ router.put("/:client_id", async (req, res) => {
       return res.status(400).json({ message: "All fields are required!" });
     }
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       console.log("Validation failed: Invalid email format");
       return res.status(400).json({
@@ -95,7 +96,6 @@ router.put("/:client_id", async (req, res) => {
       });
     }
 
-    const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
     if (!phoneRegex.test(phone)) {
       console.log("Validation failed: Invalid phone format");
       return res.status(400).json({
@@ -130,9 +130,9 @@ router.put("/:client_id", async (req, res) => {
 // Add/post client
 router.post("/", async (req, res) => {
   try {
-    const { name, email, phone } = req.body;
+    const { name, email, phone, address } = req.body;
 
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone || !address) {
       return res.status(400).json({ message: "All fields are required!!!" });
     }
 
@@ -148,10 +148,18 @@ router.post("/", async (req, res) => {
       });
     }
 
+    if (!canadianAddressRegex.test(address)) {
+      return res.status(400).json({
+        message:
+          "Please enter an address in the format: 123 Street Name, City, Province, A1A 1A1 Country",
+      });
+    }
+
     const newClientDetails = {
       name,
       email,
       phone,
+      address,
     };
     const addedClient = await addClient(newClientDetails);
     return res.status(201).json({ addedClient });

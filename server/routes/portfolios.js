@@ -65,14 +65,19 @@ router.put("/:portfolio_id", async (req, res) => {
   try {
     const { category, amount, due_date, client_id, description } = req.body;
 
+    console.log("Request body:", req.body); // Log the request body
+
     if (!category || !amount || !due_date || !client_id || !description) {
       return res.status(400).json({ message: "All fields are required!!!" });
     }
 
+    // Ensure due_date is properly formatted
+    const formattedDueDate = new Date(due_date).toISOString().split("T")[0];
+
     const updatedPortfolioDetails = {
       category,
       amount,
-      due_date,
+      due_date: formattedDueDate,
       client_id,
       description,
     };
@@ -88,9 +93,12 @@ router.put("/:portfolio_id", async (req, res) => {
     const updatedPortfolio = await knex("portfolio")
       .where({ portfolio_id })
       .first();
+
     return res.status(200).json(updatedPortfolio);
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error", error });
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
   }
 });
 

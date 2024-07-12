@@ -1,6 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import bodyParser from "body-parser";
 import clientsRoutes from "./routes/clients.js";
 import portfoliosRoutes from "./routes/portfolios.js";
 
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 // allow access to post incoming data to the server, parse JSONbody
 app.use(express.json());
+app.use(bodyParser.json());
 
 app.get("/", (_req, res) => {
   return res.send("Hello! Welcome to Banking Relationship Management System");
