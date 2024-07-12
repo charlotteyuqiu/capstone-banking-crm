@@ -168,4 +168,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Route to delete a client
+router.delete("/:client_id", async (req, res) => {
+  const { client_id } = req.params;
+  try {
+    const deletedRows = await knex("clients").where({ client_id }).del();
+
+    if (deletedRows === 0) {
+      return res.status(404).json({ message: "Client not found" });
+    }
+
+    return res.status(200).json({ message: "Client deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting client:", error.message); // Log the error message
+    console.error(error.stack); // Log the complete error stack
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
+  }
+});
+
 export default router;
