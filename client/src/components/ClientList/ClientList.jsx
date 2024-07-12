@@ -3,12 +3,15 @@ import Axios from "axios";
 import PropTypes from "prop-types";
 import "./ClientList.scss";
 import EditIcon from "../../assets/icons/edit-24px.svg";
+import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import { Link } from "react-router-dom";
+import DeleteClient from "../DeleteClient/DeleteClient";
 
 const ClientList = () => {
   const [clients, setClients] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [deletingClient, setDeletingClient] = useState(null);
 
   useEffect(() => {
     const fetchClients = async () => {
@@ -25,6 +28,15 @@ const ClientList = () => {
 
     fetchClients();
   }, []);
+
+  const onClientDeleted = (deletedClient) => {
+    setClients((prevClients) =>
+      prevClients.filter(
+        (client) => client.client_id !== deletedClient.client_id
+      )
+    );
+    setDeletingClient(null);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -57,6 +69,12 @@ const ClientList = () => {
                     alt="edit-icon"
                   />
                 </Link>
+                <img
+                  className="client-list__delete-icon"
+                  src={DeleteIcon}
+                  alt="delete-icon"
+                  onClick={() => setDeletingClient(client)}
+                />
               </div>
               <div className="client-list__info">
                 <p className="client-list__text">
@@ -80,6 +98,13 @@ const ClientList = () => {
           </li>
         ))}
       </ul>
+      {deletingClient ? (
+        <DeleteClient
+          client={deletingClient}
+          onDeleted={onClientDeleted}
+          onCancelled={() => setDeletingClient(null)}
+        />
+      ) : null}
     </div>
   );
 };

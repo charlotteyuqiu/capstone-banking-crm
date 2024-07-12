@@ -1,0 +1,101 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.delete {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black background
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  &__content {
+    background-color: $white;
+    padding: 1.5rem 2rem;
+    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include tablet {
+      width: 42rem;
+      height: 16.375rem;
+      top: 11.5625rem;
+      left: 3rem;
+      gap: 0rem;
+      opacity: 0rem;
+    }
+
+    &--close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+    }
+
+    &--title {
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    &--text {
+      margin-bottom: 24px;
+    }
+
+    &--actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+
+      @include tablet {
+        justify-content: flex-end;
+      }
+    }
+    &__cancel-button {
+      line-height: 20px;
+      height: 2.375rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 20px;
+      border: transparent;
+      background-color: $white;
+      color: $slate;
+      border: 1px solid $slate;
+      margin-right: 2rem;
+      margin-left: 2rem;
+      padding: 0.5rem 3.1875rem;
+      width: 10rem;
+      &:hover {
+        background-color: $white;
+        color: $activeBlue;
+        border-color: $activeBlue;
+      }
+      @include tablet {
+        width: 5rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
