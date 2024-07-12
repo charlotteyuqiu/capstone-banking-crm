@@ -105,6 +105,33 @@ html {
   display: inline-flex;
   text-decoration: none;
 }
+.cancel-button {
+  line-height: 20px;
+  height: 2.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 20px;
+  border: transparent;
+  background-color: $white;
+  color: $slate;
+  border: 1px solid $slate;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding: 0.5rem 3.1875rem;
+  width: 10rem;
+  &:hover {
+    background-color: $white;
+    color: $primaryBlue;
+    border-color: $primaryBlue;
+  }
+
+  @include tablet {
+    width: 5rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 
 .delete-button {
   line-height: 20px;

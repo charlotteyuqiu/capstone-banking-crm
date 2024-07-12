@@ -50,11 +50,13 @@ const ClientList = () => {
                 <p className="client-list__text">
                   <strong>{client.name}</strong>
                 </p>
-                <img
-                  className="client-list__edit-icon"
-                  src={EditIcon}
-                  alt="edit-icon"
-                />
+                <Link to={`/clients/${client.client_id}/edit`}>
+                  <img
+                    className="client-list__edit-icon"
+                    src={EditIcon}
+                    alt="edit-icon"
+                  />
+                </Link>
               </div>
               <div className="client-list__info">
                 <p className="client-list__text">

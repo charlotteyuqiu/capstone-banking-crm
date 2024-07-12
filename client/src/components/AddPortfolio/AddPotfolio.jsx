@@ -134,22 +134,6 @@ export default function AddPortfolio() {
                 </div>
               )}
 
-              <label className="addForm__label">Client ID</label>
-              <input
-                className="addForm__input formfield"
-                type="number"
-                placeholder="Client ID"
-                name="client_id"
-                value={formData.client_id}
-                onChange={changeHandler}
-              />
-              {submitClicked && errors.client_id && (
-                <div className="error-message">
-                  <img src={errorIcon} alt="Error" />
-                  <span>{errors.client_id}</span>
-                </div>
-              )}
-
               <label className="addForm__label">Description</label>
               <textarea
                 className="addForm__input formfield"
