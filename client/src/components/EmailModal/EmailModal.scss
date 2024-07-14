@@ -32,10 +32,32 @@
       background: $primaryBlue;
       color: white;
     }
+  }
+  &__cancel {
+    line-height: 20px;
+    height: 2.375rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1.25rem;
+    border: transparent;
+    background-color: $white;
+    color: $slate;
+    border: 1px solid $slate;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    padding: 0.5rem 3.1875rem;
+    width: 10rem;
+    &:hover {
+      background-color: $white;
+      color: $primaryBlue;
+      border-color: $primaryBlue;
+    }
 
-    // &-cancel {
-    //   background: $backgroundLight;
-    //   color: black;
-    // }
+    @include tablet {
+      width: 5rem;
+      height: 2.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }

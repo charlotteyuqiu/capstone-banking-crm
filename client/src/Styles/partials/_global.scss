@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 @use "./fonts" as *;
-// Global
+
 * {
   box-sizing: border-box;
 }
@@ -39,7 +39,7 @@ html {
   }
 
   &::placeholder {
-    color: $secondraryDark; // Use $secondraryDark if $slate is not defined
+    color: $secondraryDark;
   }
 }
 
@@ -105,33 +105,6 @@ html {
   display: inline-flex;
   text-decoration: none;
 }
-.cancel-button {
-  line-height: 20px;
-  height: 2.375rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 20px;
-  border: transparent;
-  background-color: $white;
-  color: $slate;
-  border: 1px solid $slate;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  padding: 0.5rem 3.1875rem;
-  width: 10rem;
-  &:hover {
-    background-color: $white;
-    color: $primaryBlue;
-    border-color: $primaryBlue;
-  }
-
-  @include tablet {
-    width: 5rem;
-    height: 2.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
 
 .delete-button {
   line-height: 20px;
@@ -159,27 +132,5 @@ html {
     height: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-}
-
-.cancel-button {
-  display: block;
-  margin: 0 auto 1.25rem auto;
-  padding: 0.625rem 1.25rem;
-  color: $white;
-  border: none;
-  border-radius: 1.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  background: $backgroundLight;
-  color: $primaryDark;
-  border: 1px solid $primaryDark;
-
-  &:hover {
-    background-color: darken($primaryBlue, 10%);
-  }
-
-  @include tablet {
-    margin: 0;
   }
 }

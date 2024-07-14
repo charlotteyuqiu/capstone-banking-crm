@@ -57,7 +57,7 @@ function EmailModal({
         <button className="button" onClick={onSend}>
           Send Email
         </button>
-        <button className="cancel-button" onClick={onRequestClose}>
+        <button className="email-modal__cancel" onClick={onRequestClose}>
           Cancel
         </button>
       </div>

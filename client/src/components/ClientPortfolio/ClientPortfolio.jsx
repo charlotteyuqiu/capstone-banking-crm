@@ -3,6 +3,8 @@ import Axios from "axios";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import "./ClientPortfolio.scss";
+import { Link } from "react-router-dom";
+import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import AlertIcon from "../../assets/icons/alert-icon.png";
 import OkIcon from "../../assets/icons/green-icon.jpeg";
@@ -81,6 +83,13 @@ const ClientPortfolio = () => {
   return (
     <div className="client-portfolio">
       <div className="client-portfolio__upper-part">
+        <Link className="link" to="/clients">
+          <img
+            className="client-portfolio__arrow"
+            src={arrowBack}
+            alt="Arrow-Back"
+          />
+        </Link>
         <h2 className="client-portfolio__title">
           View {clientName}'s Portfolio
         </h2>
