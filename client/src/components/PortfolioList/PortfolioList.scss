@@ -68,6 +68,9 @@
       gap: 1rem;
       padding: 2rem;
     }
+    @include desktop {
+      padding: 0rem 19rem;
+    }
   }
 
   &__name-edit {

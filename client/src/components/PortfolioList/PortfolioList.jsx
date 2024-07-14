@@ -169,13 +169,13 @@ const PortfolioList = () => {
               <p className="portfolio-list__description">
                 <strong>DESCRIPTION</strong> {portfolio.description}
               </p>
-            </div>
-            <div className="portfolio-list__action-btn">
-              <EmailButton
-                clientName={clientIdToNameMap[portfolio.client_id]}
-                portfolioCategory={portfolio.category}
-                dueDate={portfolio.due_date}
-              />
+              <div className="portfolio-list__action-btn">
+                <EmailButton
+                  clientName={clientIdToNameMap[portfolio.client_id]}
+                  portfolioCategory={portfolio.category}
+                  dueDate={portfolio.due_date}
+                />
+              </div>
             </div>
           </li>
         ))}
