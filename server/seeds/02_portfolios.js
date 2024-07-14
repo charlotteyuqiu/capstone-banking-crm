@@ -16,12 +16,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 2,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 300000.5,
       due_date: "2024-11-15",
       client_id: 1,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 3,
@@ -34,21 +34,21 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 4,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 600000.0,
       due_date: "2025-02-10",
       client_id: 2,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 5,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 350000.3,
       due_date: "2024-08-25",
       client_id: 3,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 6,
@@ -70,21 +70,21 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 8,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 300000.0,
       due_date: "2024-11-30",
       client_id: 4,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 9,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 650000.8,
       due_date: "2025-01-15",
       client_id: 5,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 10,
@@ -106,12 +106,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 12,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 900000.5,
       due_date: "2024-09-15",
       client_id: 7,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 13,
@@ -133,12 +133,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 15,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 400000.6,
       due_date: "2025-01-25",
       client_id: 8,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 16,
@@ -151,12 +151,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 17,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 450000.85,
       due_date: "2024-10-10",
       client_id: 10,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 18,
@@ -178,12 +178,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 20,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 700000.75,
       due_date: "2024-11-10",
       client_id: 11,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 21,
@@ -196,12 +196,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 22,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 650000.3,
       due_date: "2024-11-05",
       client_id: 12,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 23,
@@ -214,12 +214,12 @@ export async function seed(knex) {
     },
     {
       portfolio_id: 24,
-      category: "mortgage",
+      category: "Mortagge",
       amount: 800000.5,
       due_date: "2025-01-10",
       client_id: 14,
       description:
-        "This mortgage is in 5 years variable rate 3.75%, payment frequency by month.",
+        "This Mortagge is in 5 years variable rate 3.75%, payment frequency by month.",
     },
     {
       portfolio_id: 25,
