@@ -1,13 +1,14 @@
 import "./AddPortfolio.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import errorIcon from "../../assets/icons/error-24px.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function AddPortfolio() {
   // 1. State Initialization
   const [portfolios, setPortfolios] = useState([]);
+  const [clients, setClients] = useState([]);
   const [formData, setFormData] = useState({
     category: "",
     amount: "",
@@ -17,6 +18,20 @@ export default function AddPortfolio() {
   });
   const [errors, setErrors] = useState({});
   const [submitClicked, setSubmitClicked] = useState(false);
+
+  // Fetch clients data for client_id selection
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/clients");
+        setClients(response.data);
+      } catch (error) {
+        console.error("Error fetching clients:", error);
+      }
+    };
+
+    fetchClients();
+  }, []);
 
   // 2. Input change handler
   const changeHandler = (event) => {
@@ -131,6 +146,27 @@ export default function AddPortfolio() {
                 <div className="error-message">
                   <img src={errorIcon} alt="Error" />
                   <span>{errors.due_date}</span>
+                </div>
+              )}
+
+              <label className="addForm__label">Client</label>
+              <select
+                className="addForm__input formfield"
+                name="client_id"
+                value={formData.client_id}
+                onChange={changeHandler}
+              >
+                <option value="">Select Client</option>
+                {clients.map((client) => (
+                  <option key={client.client_id} value={client.client_id}>
+                    {client.name}
+                  </option>
+                ))}
+              </select>
+              {submitClicked && errors.client_id && (
+                <div className="error-message">
+                  <img src={errorIcon} alt="Error" />
+                  <span>{errors.client_id}</span>
                 </div>
               )}
 

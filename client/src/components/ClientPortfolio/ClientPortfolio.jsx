@@ -89,10 +89,10 @@ const ClientPortfolio = () => {
         {portfolios.map((portfolio) => (
           <li key={portfolio.portfolio_id} className="client-portfolio__item">
             <div className="client-portfolio__card">
+              <p className="client-portfolio__text">
+                <strong> {portfolio.category}</strong>
+              </p>
               <div className="client-portfolio__info">
-                <p className="client-portfolio__text">
-                  <strong>CATEGORY</strong> {portfolio.category}
-                </p>
                 <p className="client-portfolio__text">
                   <strong>AMOUNT</strong> {portfolio.amount}
                 </p>
