@@ -50,11 +50,11 @@
 
     &--title {
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
 
     &--text {
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
 
     &--actions {
@@ -72,11 +72,11 @@
       }
     }
     &__cancel-button {
-      line-height: 20px;
+      line-height: 1.25rem;
       height: 2.375rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      border-radius: 20px;
+      border-radius: 1.25rem;
       border: transparent;
       background-color: $white;
       color: $slate;

@@ -16,7 +16,7 @@ html {
 }
 
 .formfield {
-  border-radius: 20px;
+  border-radius: 1.25rem;
   height: 2.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -32,7 +32,7 @@ html {
   }
 
   &__textarea {
-    border-radius: 20px;
+    border-radius: 1.25rem;
     padding: 1rem 1rem 0 1rem;
     border: 1px solid $secondraryDark;
     height: 7rem;
@@ -86,10 +86,10 @@ html {
     height: 2.375rem;
     padding-left: 2.5rem;
     padding-right: 1rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background-color: $backgroundDark;
     color: $backgroundLight;
-    line-height: 20px;
+    line-height: 1.25rem;
     border: transparent;
     background-image: url("../../assets/images/icons/edit-24px.svg");
     background-repeat: no-repeat;
@@ -107,11 +107,11 @@ html {
 }
 
 .delete-button {
-  line-height: 20px;
+  line-height: 1.25rem;
   height: 2.375rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   border: transparent;
   background-color: $red;
   color: $backgroundLight;

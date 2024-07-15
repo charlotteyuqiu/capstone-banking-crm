@@ -4,9 +4,9 @@
 
 .email-modal {
   background: white;
-  padding: 20px;
-  border-radius: 4px;
-  max-width: 600px;
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+  max-width: 37.5rem;
   margin: 0 auto;
 
   &__overlay {
@@ -34,7 +34,7 @@
     }
   }
   &__cancel {
-    line-height: 20px;
+    line-height: 1.25rem;
     height: 2.375rem;
     padding-left: 1rem;
     padding-right: 1rem;

@@ -209,7 +209,7 @@
       &:focus {
         outline: none;
         border-color: $activeBlue;
-        box-shadow: 0 0 5px $activeBlue;
+        box-shadow: 0 0 0.3125rem $activeBlue;
       }
     }
   }
