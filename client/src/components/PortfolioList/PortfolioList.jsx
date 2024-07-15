@@ -9,6 +9,7 @@ import OkIcon from "../../assets/icons/green-icon.jpeg";
 import { Link } from "react-router-dom";
 import DeletePortfolio from "../DeletePortfolio/DeletePortfolio";
 import EmailButton from "../EmailButton/EmailButton";
+import FilterButton from "../FilterButton/FilterButton";
 
 const PortfolioList = () => {
   const [portfolios, setPortfolios] = useState([]);
@@ -16,6 +17,8 @@ const PortfolioList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [deletingPortfolio, setDeletingPortfolio] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterOption, setFilterOption] = useState("all");
 
   useEffect(() => {
     const fetchPortfoliosAndClients = async () => {
@@ -90,10 +93,35 @@ const PortfolioList = () => {
     );
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleFilterChange = (e) => {
+    setFilterOption(e.target.value);
+  };
+
   const clientIdToNameMap = clients.reduce((map, client) => {
     map[client.client_id] = client.name;
     return map;
   }, {});
+
+  const filteredPortfolios = portfolios
+    .filter((portfolio) =>
+      clientIdToNameMap[portfolio.client_id]
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    )
+    .filter((portfolio) => {
+      if (filterOption === "pastDue") {
+        const today = new Date();
+        const due = new Date(portfolio.due_date);
+        const timeDiff = due - today;
+        const daysDiff = timeDiff / (1000 * 3600 * 24);
+        return daysDiff <= 60;
+      }
+      return true;
+    });
 
   if (loading) {
     return <div>Loading...</div>;
@@ -107,12 +135,13 @@ const PortfolioList = () => {
     <div className="portfolio-list">
       <div className="portfolio-list__upper-part">
         <h2 className="portfolio-list__title">View Portfolios</h2>
+        <FilterButton onChange={handleFilterChange} />{" "}
         <Link to="/portfolios/add">
           <button className="button link">+ Add New Portfolio</button>
         </Link>
       </div>
       <ul className="portfolio-list__items">
-        {portfolios.map((portfolio) => (
+        {filteredPortfolios.map((portfolio) => (
           <li key={portfolio.portfolio_id} className="portfolio-list__item">
             <div className="portfolio-list__card">
               <div>

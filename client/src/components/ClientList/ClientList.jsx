@@ -6,7 +6,7 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import { Link } from "react-router-dom";
 import DeleteClient from "../DeleteClient/DeleteClient";
-import SearchFunction from "../SearchFunction/SearchFunction";
+import SearchButton from "../SearchButton/SearchButton";
 
 const ClientList = () => {
   const [clients, setClients] = useState(null);
@@ -62,7 +62,7 @@ const ClientList = () => {
     <div className="client-list">
       <div className="client-list__upper-part">
         <h2 className="client-list__title">View Client Details</h2>
-        <SearchFunction onChange={handleSearchChange} />{" "}
+        <SearchButton onChange={handleSearchChange} />{" "}
         <Link to="/clients/add">
           <button className="button link">+ Add New Client</button>
         </Link>

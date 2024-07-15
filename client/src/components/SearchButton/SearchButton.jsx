@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchFunction.scss";
+import "./SearchButton.scss";
 
 function SearchButton({ onChange }) {
   return (
