@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./ClientPortfolio.scss";
-import { Link } from "react-router-dom";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import AlertIcon from "../../assets/icons/alert-icon.png";
@@ -99,7 +97,7 @@ const ClientPortfolio = () => {
           <li key={portfolio.portfolio_id} className="client-portfolio__item">
             <div className="client-portfolio__card">
               <p className="client-portfolio__text">
-                <strong> {portfolio.category}</strong>
+                <strong>{portfolio.category}</strong>
               </p>
               <div className="client-portfolio__info">
                 <p className="client-portfolio__text">
@@ -110,34 +108,25 @@ const ClientPortfolio = () => {
                   {new Date(portfolio.due_date).toLocaleDateString()}
                 </p>
                 <div className="client-portfolio__name-edit">
-                  <img
-                    className="client-portfolio__edit-icon"
-                    src={EditIcon}
-                    alt="edit-icon"
-                  />
                   {getStatus(portfolio.due_date)}
                 </div>
               </div>
               <p className="client-portfolio__description">
                 <strong>DESCRIPTION</strong> {portfolio.description}
               </p>
-            </div>
-            <div className="client-portfolio__action-btn">
-              <EmailButton
-                clientName={clientName}
-                portfolioCategory={portfolio.category}
-                dueDate={portfolio.due_date}
-              />
+              <div className="client-portfolio__action-btn">
+                <EmailButton
+                  clientName={clientName}
+                  portfolioCategory={portfolio.category}
+                  dueDate={portfolio.due_date}
+                />
+              </div>
             </div>
           </li>
         ))}
       </ul>
     </div>
   );
-};
-
-ClientPortfolio.propTypes = {
-  portfolios: PropTypes.array.isRequired,
 };
 
 export default ClientPortfolio;
