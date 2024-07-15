@@ -6,12 +6,14 @@ import EditIcon from "../../assets/icons/edit-24px.svg";
 import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import { Link } from "react-router-dom";
 import DeleteClient from "../DeleteClient/DeleteClient";
+import SearchFunction from "../SearchFunction/SearchFunction";
 
 const ClientList = () => {
   const [clients, setClients] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [deletingClient, setDeletingClient] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchClients = async () => {
@@ -38,6 +40,16 @@ const ClientList = () => {
     setDeletingClient(null);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const filteredClients = clients
+    ? clients.filter((client) =>
+        client.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -50,12 +62,13 @@ const ClientList = () => {
     <div className="client-list">
       <div className="client-list__upper-part">
         <h2 className="client-list__title">View Client Details</h2>
+        <SearchFunction onChange={handleSearchChange} />{" "}
         <Link to="/clients/add">
           <button className="button link">+ Add New Client</button>
         </Link>
       </div>
       <ul className="client-list__items">
-        {clients.map((client) => (
+        {filteredClients.map((client) => (
           <li key={client.client_id} className="client-list__item">
             <div className="client-list__card">
               <div className="client-list__name-edit">

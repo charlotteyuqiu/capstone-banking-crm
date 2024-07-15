@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  border: 0.0625rem solid $secondaryLight;
+  border-radius: 1.25rem;
+  padding: 0.4375rem 1rem;
+  background-image: url("../../assets//icons/search-24px.svg");
+  background-repeat: no-repeat;
+  background-position: 94%;
+  margin-bottom: 0.9375rem;
+
+  @include tablet {
+    margin: 0 0.9375rem 0 0;
+  }
+
+  &:focus-within {
+    outline: none;
+    border: 0.0625rem solid $slate;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    outline: none;
+
+    &::placeholder {
+      color: $secondaryLight;
+    }
+  }
+}
