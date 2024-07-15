@@ -53,6 +53,8 @@ As a user, I want to be able to communicate with clients using pre-made email te
 - Home/Client page
 - List Clients
 - View + edit/add a client
+- View client's portfolio
+- List Portfolios
 - View +edit/add a portfolio
 - View portfolios that's coming due within 1 month
 
@@ -79,9 +81,9 @@ As a user, I want to be able to communicate with clients using pre-made email te
 ![](Add-Client-Page.png.png)
 ![](Add-Portfolio-Page.png.png)
 
-#### Alert-Modal
+#### Alert-Notification-Icon
 
-![](Alert-Modal.png)
+![](Alert-icon.png)
 
 #### Email-page-example
 
@@ -223,18 +225,38 @@ Response:
   - Implement edit clients/portfolio page
   - Create PUT /clients or portfolios/:id
 
-- Feature: add client/portfolio
+- Feature: Add client/portfolio
 
   - Add form input to add client page
   - Create POST endpoint
 
-- Feature: Alert modal
+- Feature: View portfolio from client's page
+  -Create GET endpoint to get all portfolios from a given client id
 
-  - Implement alert mesaage pop-up window
+  - Add form input to add client page
+  - Create POST endpoint
+
+- Feature: Alert Notification
+
+  - Implement alert notification icon
+
+- Feature: Action Status
+
+  - Able to choose drop-down menu to update advisor's action status
+
+  - Implement alert notification icon
 
 - Feature: Email Template Send
 
   - Implement email template page
+
+- Feature: Search Client
+
+  - By tying a few characters from client's first name, it will dynamically show the result
+
+- Feature: Filter past-due portfolio
+
+  - Choose drop-down menu options, able to see filtered past due portfolios or able to see all portfolios
 
 - Bug fixes
 
@@ -243,3 +265,4 @@ Response:
 ## Nice-to-haves
 
 -Delete-Modal page
+-Authentication
