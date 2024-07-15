@@ -20,7 +20,7 @@ function EmailButton({ clientName, portfolioCategory, dueDate }) {
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
         alert("Email sent successfully!");
-        setIsModalOpen(false); // Close the modal after sending the email
+        setIsModalOpen(false);
       })
       .catch((error) => {
         console.log("FAILED...", error);

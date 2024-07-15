@@ -3,7 +3,6 @@ import Axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import "./ClientPortfolio.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
-import EditIcon from "../../assets/icons/edit-24px.svg";
 import AlertIcon from "../../assets/icons/alert-icon.png";
 import OkIcon from "../../assets/icons/green-icon.jpeg";
 import EmailButton from "../EmailButton/EmailButton";

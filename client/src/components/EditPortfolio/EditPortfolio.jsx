@@ -8,7 +8,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 export default function EditPortfolio() {
   const { portfolio_id } = useParams();
   const navigate = useNavigate();
-  const [initialFormData, setInitialFormData] = useState(null); // State to store initial form data
+  const [initialFormData, setInitialFormData] = useState(null);
   const [formData, setFormData] = useState({
     category: "",
     amount: "",
@@ -30,7 +30,7 @@ export default function EditPortfolio() {
         setFormData(data);
         setInitialFormData({
           ...data,
-          due_date: data.due_date.split("T")[0], // Strip the time part for comparison
+          due_date: data.due_date.split("T")[0],
         }); // Set initial form data
         setLoading(false);
       } catch (error) {
@@ -60,7 +60,7 @@ export default function EditPortfolio() {
     return (
       formData.category !== initialFormData.category ||
       formData.amount !== initialFormData.amount ||
-      formData.due_date.split("T")[0] !== initialFormData.due_date || // Compare only the date parts
+      formData.due_date.split("T")[0] !== initialFormData.due_date ||
       formData.description !== initialFormData.description
     );
   };
@@ -87,7 +87,7 @@ export default function EditPortfolio() {
 
     // Proceed with form submission
     try {
-      console.log("Submitting form data:", formData); // Log form data
+      console.log("Submitting form data:", formData);
       await axios.put(
         `http://localhost:8080/api/portfolios/${portfolio_id}`,
         formData
@@ -95,7 +95,7 @@ export default function EditPortfolio() {
       alert("Portfolio updated successfully!");
       navigate("/portfolios");
     } catch (error) {
-      console.error("Error updating portfolio:", error); // Log the error
+      console.error("Error updating portfolio:", error);
     }
   };
 
