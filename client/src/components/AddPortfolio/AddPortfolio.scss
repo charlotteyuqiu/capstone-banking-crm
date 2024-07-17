@@ -105,7 +105,7 @@
       border-top: 1rem;
 
       @include tablet {
-        justify-content: flex-end;
+        justify-content: space-around;
         padding-left: 2rem;
       }
     }
