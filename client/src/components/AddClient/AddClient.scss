@@ -54,6 +54,8 @@
     @include tablet {
       margin-left: 2rem;
       border-right: 2rem;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -71,6 +73,8 @@
     font-weight: 700;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
   }
 
   &__divider-line {
@@ -105,7 +109,7 @@
       border-top: 1rem;
 
       @include tablet {
-        justify-content: flex-end;
+        justify-content: space-around;
         padding-left: 2rem;
       }
     }
