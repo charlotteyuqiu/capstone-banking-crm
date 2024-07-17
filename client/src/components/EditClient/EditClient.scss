@@ -54,6 +54,7 @@
     @include tablet {
       margin-left: 2rem;
       border-right: 2rem;
+      align-items: center;
     }
   }
 
@@ -105,7 +106,7 @@
       border-top: 1rem;
 
       @include tablet {
-        justify-content: flex-end;
+        justify-content: space-around;
         padding-left: 2rem;
       }
     }
