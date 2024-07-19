@@ -1,7 +1,6 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import bodyParser from "body-parser";
 import clientsRoutes from "./routes/clients.js";
 import portfoliosRoutes from "./routes/portfolios.js";
 
