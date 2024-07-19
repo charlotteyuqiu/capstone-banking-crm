@@ -6,7 +6,7 @@ function FilterButton({ onChange }) {
     <section className="filter-button">
       <select className="filter-button__input" onChange={onChange}>
         <option value="all">Show All</option>
-        <option value="pastDue">Show Past Due</option>
+        <option value="pastDue">Show Coming Due</option>
       </select>
     </section>
   );
