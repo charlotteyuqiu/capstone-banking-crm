@@ -1,13 +1,12 @@
 {
-  "name": "client",
-  "private": false,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "frontend",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "axios": "^1.7.2",
