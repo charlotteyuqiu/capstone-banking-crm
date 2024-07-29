@@ -4,6 +4,7 @@ import errorIcon from "../../assets/icons/error-24px.svg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import React from "react";
 
 export default function EditClient() {
   const { client_id } = useParams();

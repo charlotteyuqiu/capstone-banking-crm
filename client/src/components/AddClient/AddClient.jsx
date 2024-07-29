@@ -4,6 +4,7 @@ import errorIcon from "../../assets/icons/error-24px.svg";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import React from "react";
 
 export default function AddClient() {
   // 1. State Initialization

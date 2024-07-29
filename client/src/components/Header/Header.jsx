@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logos/bank-logo.png";
+import React from "react";
 
 function Header() {
   return (
